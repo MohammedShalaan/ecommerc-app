@@ -19,15 +19,15 @@ export const auth = (accessRole) => {
             if (!token) return next(new Error("the Token Not found", { cause: 404 }))
 
             // chick token start with Exam_ or not 
-            if (!token.startwith == "Exam_") return next(new Error("the secrit token Name not found", { cause: 404 }))
+            if (!token.startwith == "ee_") return next(new Error("the secrit token Name not found", { cause: 404 }))
 
             // split token and get orignal Token and decoded it 
-            const decodedToken = jwt.verify(token.split("Exam_")[1], process.env.user_secrectKey)
+            const decodedToken = jwt.verify(token.split("ee_")[1], process.env.user_secrectKey)
 
             // chick if user deleted 
             const chikUserdeleted = await userModel.findById(decodedToken.id)
 
-            if (!chikUserdeleted) return next(new Error("user is deleted ", { cause: 404 }))
+            if (!chikUserdeleted) return next(new Error("user is deleted", { cause: 404 }))
 
             //autherization chick user role
             if (!accessRole.includes(chikUserdeleted.role)) return next(new Error("the user not autherized ", { cause: 401 }))

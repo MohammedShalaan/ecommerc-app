@@ -9,7 +9,7 @@ const router = Express()
 router.post('/adduser', expressAsyncHandler(authRouter.adduser))
 router.get('/vervify-email', expressAsyncHandler(authRouter.verifyEmail))
 router.post('/signin', expressAsyncHandler(authRouter.signin))
-router.put('/updateUserAccount', auth(), expressAsyncHandler(authRouter.updateUserAccount))
+router.put('/updateUserAccount', auth(["User"]), expressAsyncHandler(authRouter.updateUserAccount))
 router.delete('/deletaccount', auth(), expressAsyncHandler(authRouter.deletaccount))
 router.get('/getProfileData', auth(), expressAsyncHandler(authRouter.getProfileData))
 

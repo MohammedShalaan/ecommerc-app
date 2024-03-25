@@ -1,0 +1,778 @@
+{
+	"info": {
+		"_postman_id": "31ce1d1c-2a7a-4836-9097-9bf3135294d2",
+		"name": "ُEcommerce api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30305197"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"eslam\",\r\n\"email\":\"eslam@gmail.com\",\r\n\"password\":\"12345\",\r\n\"recoveryEmail\":\"lol@gmail.com\",\r\n\"mobileNumber\":\"011022222\",\r\n\"role\":\"superAdmin\",\r\n\"emailVerfied\":true,\r\n\"isloggedin\":false,\r\n\"recoveryNumber\":\"0102340119512\",\r\n\"age\":25\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/adduser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/vervify-email?email=mohammedshalaan911@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"vervify-email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "mohammedshalaan911@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign in",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Exam_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc3NtZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6dHJ1ZSwiaWQiOiI2NWZkM2ViZGFhZmRhZjFjMWE0YWMzNGQiLCJpYXQiOjE3MTEwOTY1OTQsImV4cCI6MTcxMTE4Mjk5NH0.z9XztdoQm5mqAd-mDPtgkAOWIDkrC4wLCAQuinWoQf0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"yassmen@gmail.com\",\r\n\"username\":\"yassmenss\"\r\n// \"password\":\"12345\",\r\n// \"recoveryEmail\":\"lol@gmail.com\",\r\n// \"mobileNumber\":\"0102340119531\",\r\n// \"role\":\"admin\",\r\n// \"emailVerfied\":false,\r\n// \"isloggedin\":false,\r\n// \"recoveryNumber\":\"0102340119512\",\r\n// \"age\":25\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/updateUserAccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"updateUserAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Exam_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkc2hhbGFhbjkxMUBnbWFpbC5jb20iLCJpc2xvZ2dlZGluIjpmYWxzZSwiaWQiOiI2NWQyMGFiNDk2ZGE1NTIwMjM4NzNkM2IiLCJpYXQiOjE3MDgyNjQzMTgsImV4cCI6MTcwODM1MDcxOH0.m7HHSR1leDcnwOIiWIdtX3_ZOdon898zDzQSPEdelKo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/auth/deletaccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"deletaccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/auth/getProfileData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"getProfileData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "add category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc3NtZW4xQGdtYWlsLmNvbSIsImlzbG9nZ2VkaW4iOnRydWUsImlkIjoiNjVmZDNlYmRhYWZkYWYxYzFhNGFjMzRkIiwiaWF0IjoxNzExMDk5NzcxLCJleHAiOjE3MTExODYxNzF9.hDBdTh5inIRnA96Kpnn5Ctj6RdzCIQarK95KbrPBSvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imge",
+									"type": "file",
+									"src": "/C:/Users/PC/Downloads/thoughtful-teen-boy-using-laptop.jpg"
+								},
+								{
+									"key": "name",
+									"value": "mobile",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/addcategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"addcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Exam_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1vaGFtbWVkc2hhbGFhbjkxMUBnbWFpbC5jb20iLCJpc2xvZ2dlZGluIjp0cnVlLCJpZCI6IjY1ZDIwZjM3ZWE1YzM0NDY1ZjE1ZjhlNiIsImlhdCI6MTcwODMzMzMxMywiZXhwIjoxNzA4NDE5NzEzfQ.L-QVuaoK0LGwRADgifiJNpk--maqnNpxNvU2glHMUkk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new one",
+									"type": "text"
+								},
+								{
+									"key": "imge",
+									"type": "file",
+									"src": "/C:/Users/2024/Downloads/2051b4cd-8afc-43c5-9b53-303f3fbabb47.jpg"
+								},
+								{
+									"key": "oldPublicid",
+									"value": "category/Categories/FSAIVBGBF/njd03zqnjginmjag7454",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/updatecategory/65d36216c5cc3ea9c47e2690",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"updatecategory",
+								"65d36216c5cc3ea9c47e2690"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc3NtZW4xQGdtYWlsLmNvbSIsImlzbG9nZ2VkaW4iOnRydWUsImlkIjoiNjVmZDNlYmRhYWZkYWYxYzFhNGFjMzRkIiwiaWF0IjoxNzExMDk5NzcxLCJleHAiOjE3MTExODYxNzF9.hDBdTh5inIRnA96Kpnn5Ctj6RdzCIQarK95KbrPBSvE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/category/getallcategores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"getallcategores"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "the category"
+		},
+		{
+			"name": "sub categores",
+			"item": [
+				{
+					"name": "delete all things",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "add subcategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc3NtZW4xQGdtYWlsLmNvbSIsImlzbG9nZ2VkaW4iOnRydWUsImlkIjoiNjVmZDNlYmRhYWZkYWYxYzFhNGFjMzRkIiwiaWF0IjoxNzExMDk5NzcxLCJleHAiOjE3MTExODYxNzF9.hDBdTh5inIRnA96Kpnn5Ctj6RdzCIQarK95KbrPBSvE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "iphone",
+									"type": "text"
+								},
+								{
+									"key": "imge",
+									"type": "file",
+									"src": "/C:/Users/PC/Downloads/WhatsApp Image 2023-12-06 at 3.21.43 PM.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/subcatagory/addsubcategories/65fd505fdd5ef7ee5f924527",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subcatagory",
+								"addsubcategories",
+								"65fd505fdd5ef7ee5f924527"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatesubcategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deletesubcategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/subcatagory/deletesubcategory/65d49133d6cfdc3fba3187e1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"subcatagory",
+								"deletesubcategory",
+								"65d49133d6cfdc3fba3187e1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "brand",
+			"item": [
+				{
+					"name": "add Brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc21lZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6ZmFsc2UsImlkIjoiNjVmZTk5MTAwNzNkYTQ1ZjY3NmQ4YjI1IiwiaWF0IjoxNzExMTg0MTczLCJleHAiOjE3MTEyNzA1NzN9.Sqc4oeBoF5CVV1skRTIPWar0Q6y-HkhmIv8F21Fc4GQ",
+								"type": "text"
+							},
+							{
+								"key": "categoryId",
+								"value": "65d49133d6cfdc3fba3187e1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "subCategoryId",
+								"value": "65d49bcbb5653148e5658dab",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imge",
+									"type": "file",
+									"src": "/C:/Users/2024/Downloads/pngtree-green-checkmark-isolated-on-white-background-symbol-of-approval-vector-png-image_40209662.jpg"
+								},
+								{
+									"key": "name",
+									"value": "iphone 13 pro max",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "65fe9981073da45f676d8b2d",
+									"type": "text"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "65fe99d9073da45f676d8b32",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/addBrand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"addBrand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllbrandes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/brand/getAllbrandes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"getAllbrandes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletebarnd",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/brand/deletebarnd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"deletebarnd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addproduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc21lZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6ZmFsc2UsImlkIjoiNjVmZTk5MTAwNzNkYTQ1ZjY3NmQ4YjI1IiwiaWF0IjoxNzExMTg0MTczLCJleHAiOjE3MTEyNzA1NzN9.Sqc4oeBoF5CVV1skRTIPWar0Q6y-HkhmIv8F21Fc4GQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "basePrice",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "specs",
+									"value": "{\"color\":[\"ازرق\"]}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/2024/Downloads/a7c5ee68515efe1fe39a391fc815706f.jpg"
+								},
+								{
+									"key": "title",
+									"value": "تجربه 10",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/addproduct?categoryId=65fe9981073da45f676d8b2d&subCategoryId=65fe99d9073da45f676d8b32&brandId=65fe9a52073da45f676d8b3e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"addproduct"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "65fe9981073da45f676d8b2d"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "65fe99d9073da45f676d8b32"
+								},
+								{
+									"key": "brandId",
+									"value": "65fe9a52073da45f676d8b3e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc21lZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6ZmFsc2UsImlkIjoiNjVmZTk5MTAwNzNkYTQ1ZjY3NmQ4YjI1IiwiaWF0IjoxNzExMTg0MTczLCJleHAiOjE3MTEyNzA1NzN9.Sqc4oeBoF5CVV1skRTIPWar0Q6y-HkhmIv8F21Fc4GQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "basePrice",
+									"value": "100",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specs",
+									"value": "{\"color\":[\"blue\"]}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/2024/Downloads/a7c5ee68515efe1fe39a391fc815706f.jpg",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "the pdouct iphone 0",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/updateproduct/65fea463554e08c122072a16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"updateproduct",
+								"65fea463554e08c122072a16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc21lZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6ZmFsc2UsImlkIjoiNjVmZTk5MTAwNzNkYTQ1ZjY3NmQ4YjI1IiwiaWF0IjoxNzExMTg0MTczLCJleHAiOjE3MTEyNzA1NzN9.Sqc4oeBoF5CVV1skRTIPWar0Q6y-HkhmIv8F21Fc4GQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/product/deleteProduct/65feca503935f63bb91f5712",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"deleteProduct",
+								"65feca503935f63bb91f5712"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getall product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlhc21lZW5AZ21haWwuY29tIiwiaXNsb2dnZWRpbiI6dHJ1ZSwiaWQiOiI2NWZlOTkxMDA3M2RhNDVmNjc2ZDhiMjUiLCJpYXQiOjE3MTEyNzE1NDYsImV4cCI6MTcxMTM1Nzk0Nn0.RGtNAlt3mSQ12z1tMIa14Ye50x3gAxLUAfNPN_H8Cmc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\":\"2\",\r\n    \"size\":2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/product/allProduct?page=1&size=10&sort=createdAt desc&title=تجرب",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"allProduct"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt desc"
+								},
+								{
+									"key": "title",
+									"value": "تجرب"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "addCard",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbGFtQGdtYWlsLmNvbSIsImlzbG9nZ2VkaW4iOmZhbHNlLCJpZCI6IjY2MDAxODNkM2UwZmU5Y2ZmYmI5ZDc4NyIsImlhdCI6MTcxMTI4MjI1MiwiZXhwIjoxNzExMzY4NjUyfQ.ugzOoY6O-q97DzO-rFhoKbQgJmAq--8eWsqVRSnahG8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"65ffdf30681c8a67824f7a51\",\r\n    \"quantity\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/card/addCard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"card",
+								"addCard"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "quantity",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove from card",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "ee_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVzbGFtQGdtYWlsLmNvbSIsImlzbG9nZ2VkaW4iOmZhbHNlLCJpZCI6IjY2MDAxODNkM2UwZmU5Y2ZmYmI5ZDc4NyIsImlhdCI6MTcxMTI4MjI1MiwiZXhwIjoxNzExMzY4NjUyfQ.ugzOoY6O-q97DzO-rFhoKbQgJmAq--8eWsqVRSnahG8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/card/deleteOnCard/65ffdf30681c8a67824f7a51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"card",
+								"deleteOnCard",
+								"65ffdf30681c8a67824f7a51"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

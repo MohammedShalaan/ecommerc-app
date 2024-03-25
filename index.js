@@ -20,11 +20,14 @@ const app = Express()
 app.use(Express.json()) // to use req.json in any router 
 
 //routers
-app.use('/user', routers.userRouer)
+// app.use('/user', routers.userRouer)
 app.use('/auth', routers.authRouer)
 app.use('/category', routers.categoryRouer)
 app.use('/subcatagory', routers.subcatagoryRouer)
 app.use('/brand', routers.brandRouter)
+app.use('/product', routers.productRouter)
+app.use('/card', routers.card)
+app.use('/copoun', routers.coupon)
 
 
 
